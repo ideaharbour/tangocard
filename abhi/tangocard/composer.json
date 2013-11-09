@@ -1,0 +1,26 @@
+{
+    "name": "abhi/tangocard",
+    "type": "library",
+    "description": "Tangocard raas API",
+    "keywords": ["tangocard"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abhishek Kumar Srivastava",
+            "email": "abhi.ksrivastava@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Abhi\\Tangocard": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
