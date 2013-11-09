@@ -7,13 +7,13 @@ return
         "mode" => "sandbox",
         "sandbox" => array ( 
             "host" => "https://sandbox.tangocard.com/raas/v1/",
-            "platform_name" => "FreshTest",
-            "platform_key" => "pDKEiwJEd2l542d9vTb64ey4b+00o28P3+9Hn4at3y/IE4Rc66sqXV0RY0I=",
+            "platform_name" => "<Your platform name>",
+            "platform_key" => "<Your platform key>",
         ),
         "production" => array ( 
             "host" => "https://sandbox.tangocard.com/raas/v1/",
-            "platform_name" => "FreshTest",
-            "platform_key" => "pDKEiwJEd2l542d9vTb64ey4b+00o28P3+9Hn4at3y/IE4Rc66sqXV0RY0I=",
+            "platform_name" => "<Your platform name>",
+            "platform_key" => "<Your platform key>",
         ),
         "api" => array(
             "create_account" => "accounts",
