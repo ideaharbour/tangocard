@@ -78,7 +78,7 @@ class TangocardCurl {
         else {
             $this->info = curl_getinfo($process);
             curl_close($process);
-            return json_decode$this->response;
+            return json_decode($this->response);
         }
     }
 }
