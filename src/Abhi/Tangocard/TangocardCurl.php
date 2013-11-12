@@ -19,7 +19,7 @@ class TangocardCurl {
         $this->host = Config::get('tangocard::' . $this->mode . '.host');
         $this->platformName = Config::get('tangocard::' . $this->mode . '.platform_name');
         $this->platformKey = Config::get('tangocard::' . $this->mode . '.platform_key');
-        $this->pem = 'E:/web/invent-value/workbench/abhi/tangocard/src/ssl/tangocard_digicert_chain.pem';
+        $this->pem = __DIR__ . '../../../ssl/tangocard_digicert_chain.pem';
     }
 
     /**
@@ -48,7 +48,6 @@ class TangocardCurl {
      *
      */
     private function execute($params, $type = 'get') {
-        echo $this->url;
         $process = curl_init($this->url);
         curl_setopt($process, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($process, CURLOPT_ENCODING, 1);
