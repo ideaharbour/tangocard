@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Tangocard": "src/"
+            "Abhi\\Tangocard": "src/"
         }
     },
     "minimum-stability": "dev"
