@@ -5,25 +5,6 @@ use Config;
 
 class Tangocard {
  
-    public static function greeting(){
-		$params = array();
-		$params['account_identifier'] = "test123";
-		$params['customer'] = "A";
-		$params['campaign'] = "Hero";
-		$params['from'] = "127.0.0.1";
-		$params['subject'] = 'test';
-		$params['recipient'] = array();
-		$params['recipient']['name'] = 'test';
-		$params['recipient']['email'] = 'test@abc.com';
-		$params['sku'] = 'AMCA-E-1000-STD';
-		//$params['amount'] = 100000; // in cents
-		$params['message'] = 'test';
-		$tangocardCurl = new TangocardCurl;
-		//$data = $tangocardCurl->postRequest(Config::get('tangocard::api.place_orders'), $params);
-		$data =  Tangocard::getOrderDetail('113-11268548-09');
-    	return "What up dawg " . $data;
-  	}
-
   	/**
   	 * Create a new platform account on tango card
   	 * “Platform” is Invent Value
