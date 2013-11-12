@@ -15,11 +15,8 @@
         "illuminate/support": "4.0.x"
     },
     "autoload": {
-        "classmap": [
-            "src/migrations"
-        ],
         "psr-0": {
-            "Abhi\\Tangocard": "src/"
+            "Tangocard": "src/"
         }
     },
     "minimum-stability": "dev"
