@@ -41,7 +41,7 @@ class Tangocard {
   	 * fund an account, amount will be provided in cents
 	 *
   	 */
-    public static function fundAccount($identifier, $customer, $amount, $ip, $cardNumber, $expiry, $cvv, $fname, $lname, $address, $city, $zip, $country, $email){
+    public static function fundAccount($identifier, $customer, $amount, $ip, $cardNumber, $expiry, $cvv, $fname, $lname, $address, $city, $state, $zip, $country, $email){
 		$params = array();
 		$params['account_identifier'] = $identifier;
 		$params['customer'] = $customer;
