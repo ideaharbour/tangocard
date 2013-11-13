@@ -11,7 +11,8 @@ class Tangocard {
 	 *
      * “Customer” is the Invent Value Client Manager
      *
-     *Email address is the Manager’s email address
+     *
+     * TODO:: order history
   	 * 
   	 */
     public static function createAccount($identifier, $email, $customer){
@@ -39,7 +40,7 @@ class Tangocard {
 
   	/**
   	 * fund an account, amount will be provided in cents
-	 *
+	 * 
   	 */
     public static function fundAccount($identifier, $customer, $amount, $ip, $cardNumber, $expiry, $cvv, $fname, $lname, $address, $city, $state, $zip, $country, $email){
 		$params = array();
