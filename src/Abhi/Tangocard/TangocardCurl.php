@@ -67,13 +67,17 @@ class TangocardCurl {
 
         // Request failed
         if($this->response === FALSE) {
-            $this->error_code = curl_errno($process);
-            $this->error_string = curl_error($process);
-            
-            curl_close($process);
+            if(Config::get('tangocard.' . $this->mode . '.deployment_type') == 'development') {
+                $this->error_code = curl_errno($process);
+                echo '<br/>';
+                $this->error_string = curl_error($process);
+                print_r( $this->error_code);
+                print_r( $this->error_string);
+                curl_close($process);
+                die;
+            }
             return FALSE;
-        } 
-        
+        }        
         // Request successful
         else {
             $this->info = curl_getinfo($process);
