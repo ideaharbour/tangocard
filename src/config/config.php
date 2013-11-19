@@ -22,6 +22,6 @@ return
             "rewards_list" => "rewards",
             "place_orders" => "orders",
             "get_order_info" => "orders/<order-id>",
-            "order_history" => "orders?",
+            "order_history" => "orders?<Query-String>&account_identifier=<account-id>&customer=<customer>",
         ),
     );

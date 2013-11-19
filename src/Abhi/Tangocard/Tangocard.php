@@ -11,8 +11,7 @@ class Tangocard {
 	 *
      * “Customer” is the Invent Value Client Manager
      *
-     *
-     * TODO:: order history
+     *Email address is the Manager’s email address
   	 * 
   	 */
     public static function createAccount($identifier, $email, $customer){
@@ -40,7 +39,7 @@ class Tangocard {
 
   	/**
   	 * fund an account, amount will be provided in cents
-	 * 
+	 *
   	 */
     public static function fundAccount($identifier, $customer, $amount, $ip, $cardNumber, $expiry, $cvv, $fname, $lname, $address, $city, $state, $zip, $country, $email){
 		$params = array();
@@ -102,5 +101,28 @@ class Tangocard {
 		$params['order-id'] = $orderId;
 		$tangocardCurl = new TangocardCurl;
 		return $data = $tangocardCurl->getRequest(Config::get('tangocard::api.get_order_info'), $params);
+    }
+
+    public static function getOrderHistory($startDate = null, $endDate = null, $offset = 0, $limit = null, $customer, $accountIdentifier) {
+        $params = array();
+        $queryString = array();
+        if(null != $startDate) {
+            $startDatetime = new DateTime($startDate);
+            $queryString[] = 'start_date=' . $startDatetime->format(DateTime::ISO8601);
+        }
+
+        if(null != $startDate) {
+            $endDatetime = new DateTime($endDate);
+            $queryString[] = 'end_date=' . $endDatetime->format(DateTime::ISO8601);
+        }
+        $queryString[] = 'offset=' . $offset;
+        if(null != $limit)
+            $queryString[] = 'limit=' . $limit;
+        $params['Query-String'] = implode('&', $queryString);
+        $params['customer'] = $customer;
+        $params['account-id'] = $accountIdentifier;
+
+        $tangocardCurl = new TangocardCurl;
+        return $data = $tangocardCurl->getRequest(Config::get('tangocard::api.order_history'), $params);
     }
 }
