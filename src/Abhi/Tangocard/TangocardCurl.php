@@ -19,7 +19,7 @@ class TangocardCurl {
         $this->host = Config::get('tangocard.' . $this->mode . '.host');
         $this->platformName = Config::get('tangocard.' . $this->mode . '.platform_name');
         $this->platformKey = Config::get('tangocard.' . $this->mode . '.platform_key');
-        $this->pem = __DIR__ . '../../../ssl/tangocard_digicert_chain.pem';
+        $this->pem = __DIR__ . '/../../ssl/tangocard_digicert_chain.pem';
     }
 
     /**
