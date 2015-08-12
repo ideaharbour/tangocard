@@ -20,7 +20,7 @@ class Tangocard {
 		$params['email'] = $email;
 		$params['customer'] = $customer;
 		$tangocardCurl = new TangocardCurl;
-		return $data = $tangocardCurl->postRequest(Config::get('tangocard::api.create_account'), $params);
+		return $data = $tangocardCurl->postRequest(Config::get('tangocard.api.create_account'), $params);
     }
 
   	/**
@@ -34,7 +34,7 @@ class Tangocard {
 		$params['account-id'] = $identifier;
 		$params['customer'] = $customer;
 		$tangocardCurl = new TangocardCurl;
-		return $data = $tangocardCurl->getRequest(Config::get('tangocard::api.get_account_info'), $params);
+		return $data = $tangocardCurl->getRequest(Config::get('tangocard.api.get_account_info'), $params);
     }
 
   	/**
@@ -62,7 +62,7 @@ class Tangocard {
 		$params['credit_card']['billing_address']['email'] = $email;
 
 		$tangocardCurl = new TangocardCurl;
-		return $data = $tangocardCurl->postRequest(Config::get('tangocard::api.fund_account'), $params);
+		return $data = $tangocardCurl->postRequest(Config::get('tangocard.api.fund_account'), $params);
     }
 
   	/**
@@ -72,7 +72,7 @@ class Tangocard {
     public static function getRewards(){
 		$params = array();
 		$tangocardCurl = new TangocardCurl;
-		return $data = $tangocardCurl->getRequest(Config::get('tangocard::api.rewards_list'), $params);
+		return $data = $tangocardCurl->getRequest(Config::get('tangocard.api.rewards_list'), $params);
     }
 
   	/**
@@ -93,14 +93,14 @@ class Tangocard {
 		$params['amount'] = $amount; // in cents
 		$params['message'] = $message;
 		$tangocardCurl = new TangocardCurl;
-		return $data = $tangocardCurl->postRequest(Config::get('tangocard::api.place_orders'), $params);
+		return $data = $tangocardCurl->postRequest(Config::get('tangocard.api.place_orders'), $params);
     }
 
     public static function getOrderDetail($orderId) {
 		$params = array();
 		$params['order-id'] = $orderId;
 		$tangocardCurl = new TangocardCurl;
-		return $data = $tangocardCurl->getRequest(Config::get('tangocard::api.get_order_info'), $params);
+		return $data = $tangocardCurl->getRequest(Config::get('tangocard.api.get_order_info'), $params);
     }
 
     public static function getOrderHistory($startDate = null, $endDate = null, $offset = 0, $limit = null, $customer, $accountIdentifier) {
@@ -123,6 +123,6 @@ class Tangocard {
         $params['account-id'] = $accountIdentifier;
 
         $tangocardCurl = new TangocardCurl;
-        return $data = $tangocardCurl->getRequest(Config::get('tangocard::api.order_history'), $params);
+        return $data = $tangocardCurl->getRequest(Config::get('tangocard.api.order_history'), $params);
     }
 }
